@@ -1,6 +1,7 @@
 import { client } from "../../../libs/client";
-import { Blog, Context, MicroCMSResponse } from "../../types/EndPoints";
+import { Blog, Context } from "../../types/EndPoints";
 import React from "react";
+import { MicroCMSListResponse } from "microcms-js-sdk";
 
 type Props = {
   blog: Blog;
@@ -21,7 +22,9 @@ export default function BlogId({ blog }: Props) {
 
 // 静的生成のためのパスを指定します
 export const getStaticPaths = async () => {
-  const data: MicroCMSResponse<Blog> = await client.get({ endpoint: "blog" });
+  const data: MicroCMSListResponse<Blog> = await client.get({
+    endpoint: "blog",
+  });
 
   const paths = data.contents.map((content) => `/blog/${content.id}`);
   return { paths, fallback: false };
