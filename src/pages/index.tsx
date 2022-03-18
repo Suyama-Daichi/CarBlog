@@ -1,3 +1,4 @@
+import { MicroCMSListResponse } from "microcms-js-sdk";
 import type { NextPage } from "next";
 
 import Link from "next/link";
@@ -6,7 +7,9 @@ import { Blog } from "../types/EndPoints";
 
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async () => {
-  const data = await client.get({ endpoint: "blog" });
+  const data = await client.get<MicroCMSListResponse<Blog>>({
+    endpoint: "blog",
+  });
 
   return {
     props: {
@@ -18,7 +21,7 @@ export const getStaticProps = async () => {
 type Props = {
   blog: Blog[];
 };
-const Home: NextPage = ({ blog }: Props) => {
+const Home: NextPage<Props> = ({ blog }: Props) => {
   return (
     <div>
       <ul>
