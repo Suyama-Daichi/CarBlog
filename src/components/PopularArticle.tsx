@@ -1,5 +1,5 @@
-import { IBlog } from "../types";
-import styles from "../styles/components/PopularArticle.module.scss";
+import { IBlog } from "@/src/types";
+import styles from "@/src/styles/components/PopularArticle.module.scss";
 
 type PopularArticleProps = {
   blogs: IBlog[];

@@ -7,9 +7,9 @@ import {
   Pager,
   PopularArticle,
   Search,
-} from "../components";
-import { IBlog, ICategory, IPopularArticles } from "../types";
-import { getContents } from "../framework/blog";
+} from "@/src/components";
+import { IBlog, ICategory, IPopularArticles } from "@/src/types";
+import { getContents } from "@/src/framework/blog";
 
 type IndexProps = {
   currentPage: number;

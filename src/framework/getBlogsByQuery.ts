@@ -1,5 +1,5 @@
-import { config } from "../../site.config";
-import { IBlog, MicroCmsResponse } from "../types";
+import { config } from "site.config";
+import { IBlog, MicroCmsResponse } from "@/src/types";
 import axios from "axios";
 
 export const getBlogsByQuery = async (

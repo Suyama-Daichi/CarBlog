@@ -1,6 +1,6 @@
 import axios from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
-import { config } from "../../../../site.config";
+import { config } from "site.config";
 
 const search = async (req: NextApiRequest, res: NextApiResponse) => {
   const query: any = req.query.q;

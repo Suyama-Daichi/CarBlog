@@ -1,6 +1,6 @@
 import NextLink from "next/link";
-import { ICategory, ITag } from "../types";
-import styles from "../styles/components/Pager.module.scss";
+import { ICategory, ITag } from "@/src/types";
+import styles from "@/src/styles/components/Pager.module.scss";
 
 type PagerProps = {
   currentPage: number;

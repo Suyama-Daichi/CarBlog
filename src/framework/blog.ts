@@ -1,4 +1,4 @@
-import { config } from "../../site.config";
+import { config } from "site.config";
 import {
   IBlog,
   ICategory,
@@ -6,8 +6,8 @@ import {
   ITag,
   MicroCmsResponse,
   Queries,
-} from "../types";
-import { client } from "../framework";
+} from "@/src/types";
+import { client } from "@/src/framework";
 
 const limit = parseInt(config.defaultLimit);
 

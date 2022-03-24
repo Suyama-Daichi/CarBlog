@@ -1,10 +1,10 @@
-import axios from 'axios';
-import { NextApiRequest, NextApiResponse } from 'next';
-import { config } from '../../site.config';
-import { IBlog } from '@/types';
-import { convertToToc, convertToHtml } from '@scripts';
+import axios from "axios";
+import { NextApiRequest, NextApiResponse } from "next";
+import { config } from "site.config";
+import { IBlog } from "@/src/types";
+import { convertToToc, convertToHtml } from "@/src/scripts";
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const draft = async (req: NextApiRequest, res: NextApiResponse) => {
   const id = req.query.id;
   const draftKey = req.query.draftKey;
 
@@ -16,8 +16,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     .get<IBlog>(
       `https://${config.serviceId}.microcms.io/api/v1/blog/${id}?draftKey=${draftKey}&depth=2`,
       {
-        headers: { 'X-MICROCMS-API-KEY': config.apiKey },
-      },
+        headers: { "X-MICROCMS-API-KEY": config.apiKey },
+      }
     )
     .then(({ data }) => {
       const toc = convertToToc(data.body);
@@ -28,3 +28,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       res.status(500).json(error);
     });
 };
+
+export default draft;
