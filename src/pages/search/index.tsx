@@ -1,11 +1,16 @@
-import { GetServerSidePropsContext, NextPage } from 'next';
-import Link from 'next/link';
-import { BreadCrumb, Categories, Meta, PopularArticle } from '@components';
-import { useSearchByQuery } from '@hooks';
-import { IBlog, ICategory, IPopularArticles, MicroCmsResponse } from '@/types';
-import styles from '@styles/SearchPage.module.scss';
-import { getCategories, getPopularArticles } from '@blog';
-import { getBlogsByQuery } from '@framework';
+import { GetServerSidePropsContext, NextPage } from "next";
+import Link from "next/link";
+import { BreadCrumb, Categories, Meta, PopularArticle } from "../../components";
+import { useSearchByQuery } from "../../hooks";
+import {
+  IBlog,
+  ICategory,
+  IPopularArticles,
+  MicroCmsResponse,
+} from "../../types";
+import styles from "../../styles/SearchPage.module.scss";
+import { getCategories, getPopularArticles } from "../../framework/blog";
+import { getBlogsByQuery } from "../../framework";
 
 type IndexProps = {
   blogs: MicroCmsResponse<IBlog>;
@@ -15,10 +20,8 @@ type IndexProps = {
 };
 
 const Index: NextPage<IndexProps> = (props) => {
-  const { searchValue, setSearchValue, onEnterKeyEvent, data } = useSearchByQuery(
-    props.query,
-    props.blogs,
-  );
+  const { searchValue, setSearchValue, onEnterKeyEvent, data } =
+    useSearchByQuery(props.query, props.blogs);
 
   return (
     <div className="divider">
@@ -41,7 +44,10 @@ const Index: NextPage<IndexProps> = (props) => {
                     <>
                       {blog.ogimage && (
                         <picture>
-                          <img src={`${blog.ogimage.url}?w=670`} className="ogimage lazyload" />
+                          <img
+                            src={`${blog.ogimage.url}?w=670`}
+                            className="ogimage lazyload"
+                          />
                         </picture>
                       )}
                       <dl className="content">

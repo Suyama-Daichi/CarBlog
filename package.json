@@ -10,6 +10,7 @@
     "format": "prettier --write **/*.{tsx,ts}"
   },
   "dependencies": {
+    "@types/axios": "^0.14.0",
     "@types/dompurify": "^2.2.2",
     "@types/jsdom": "^16.2.10",
     "@types/react-scroll": "^1.8.2",
