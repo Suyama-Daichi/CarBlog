@@ -1,5 +1,6 @@
 import { IBlog } from "@/src/types";
 import styles from "@/src/styles/components/PopularArticle.module.scss";
+import ImageThumbnail from "@/src/components/ImageThumbnail";
 
 type PopularArticleProps = {
   blogs: IBlog[];
@@ -17,12 +18,9 @@ export const PopularArticle: React.FC<PopularArticleProps> = (props) => {
                 <picture>
                   <source
                     type="image/webp"
-                    data-srcset={`${blog.ogimage.url}?w=560&fm=webp`}
+                    data-srcset={`${blog.ogimage?.url}?w=560&fm=webp`}
                   />
-                  <img
-                    data-src={`${blog.ogimage?.url}?w=560&q=100`}
-                    className={`${styles.image} lazyload`}
-                  />
+                  <ImageThumbnail url={`${blog.ogimage?.url}?w=560&q=100`} />
                 </picture>
                 <p className={styles.title}>{blog.title}</p>
               </a>

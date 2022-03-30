@@ -21,6 +21,7 @@ import {
 import styles from "@/src/styles/Detail.module.scss";
 import { convertToToc, convertToHtml } from "@/src/scripts";
 import { getAllBlogs, getBlogById, getContents } from "@/src/framework/blog";
+import ImageThumbnail from "@/src/components/ImageThumbnail";
 
 type DetailProps = {
   blog: IBlog;
@@ -62,10 +63,7 @@ const Detail: NextPage<DetailProps> = (props) => {
               type="image/webp"
               srcSet={`${props.blog.ogimage.url}?w=375&fm=webp, ${props.blog.ogimage.url}?w=750&fm=webp 2x`}
             />
-            <img
-              src={`${props.blog.ogimage?.url}?w=820&q=100`}
-              className={styles.ogimage}
-            />
+            <ImageThumbnail url={`${props.blog.ogimage?.url}?w=560&q=100`} />
           </picture>
         </div>
         <BreadCrumb category={props.blog.category} />

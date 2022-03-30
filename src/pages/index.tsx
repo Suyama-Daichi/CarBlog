@@ -10,6 +10,8 @@ import {
 } from "@/src/components";
 import { IBlog, ICategory, IPopularArticles } from "@/src/types";
 import { getContents } from "@/src/framework/blog";
+import Image from "next/image";
+import styles from "@/src/styles/components/PopularArticle.module.scss";
 
 type IndexProps = {
   currentPage: number;
@@ -34,9 +36,13 @@ const Index: NextPage<IndexProps> = (props) => {
                     <>
                       {blog.ogimage && (
                         <picture>
-                          <img
+                          <Image
+                            objectFit="cover"
+                            width={384}
+                            height={216}
                             src={`${blog.ogimage.url}?w=670`}
-                            className="ogimage lazyload"
+                            className={`${styles.image} lazyload`}
+                            alt={"popularArticleImage"}
                           />
                         </picture>
                       )}
