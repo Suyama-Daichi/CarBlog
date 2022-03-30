@@ -15,6 +15,7 @@ export const BreadCrumb: React.FC<BreadCrumbProps> = (props) => {
   };
 
   const hasTag = (tag?: ITag) => {
+    console.log(tag);
     if (!tag) {
       return false;
     }
@@ -35,7 +36,7 @@ export const BreadCrumb: React.FC<BreadCrumbProps> = (props) => {
       )}
       {hasTag(props.tag) && (
         <li className="breadcrumbList">
-          <Link href={`/tag/${props.tag?.id}/page/1`}>{props.tag.name}</Link>
+          <Link href={`/tag/${props.tag?.id}/page/1`}>{props.tag?.name}</Link>
         </li>
       )}
     </ul>
