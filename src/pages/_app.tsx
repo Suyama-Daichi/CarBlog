@@ -1,9 +1,9 @@
 import { AppProps } from "next/app";
 import Head from "next/head";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { Footer, Header } from "@/src/components";
+import { Footer, Header } from "@components";
 import { config } from "site.config";
-import { usePageView } from "@/src/hooks";
+import { usePageView } from "@hooks";
 import "@/src/styles/globals.scss";
 
 const queryClient = new QueryClient();

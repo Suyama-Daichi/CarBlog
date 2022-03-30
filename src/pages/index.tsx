@@ -7,9 +7,9 @@ import {
   Pager,
   PopularArticle,
   Search,
-} from "@/src/components";
-import { IBlog, ICategory, IPopularArticles } from "@/src/types";
-import { getContents } from "@/src/framework/blog";
+} from "@components";
+import { IBlog, ICategory, IPopularArticles } from "@types";
+import { getContents } from "@src/framework/blog";
 import Image from "next/image";
 import styles from "@/src/styles/components/PopularArticle.module.scss";
 

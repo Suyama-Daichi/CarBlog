@@ -11,11 +11,10 @@ import {
   Share,
   Toc,
 } from "@components";
-import { IBlog, ICategory, IPopularArticles, ITag } from "@/types";
+import { IBlog, ICategory, IPopularArticles, ITag } from "@types";
 import { useDraft } from "@hooks";
 import styles from "@styles/Detail.module.scss";
-import { getContents } from "@blog";
-import { Tags } from "@components/Tags";
+import { getContents } from "@src/framework";
 
 type DraftProps = {
   blogs: IBlog[];

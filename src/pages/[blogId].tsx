@@ -10,18 +10,12 @@ import {
   Search,
   Share,
   Toc,
-} from "@/src/components";
-import {
-  IBlog,
-  ICategory,
-  IPopularArticles,
-  ITag,
-  TocTypes,
-} from "@/src/types/interface";
+} from "@components";
+import { IBlog, ICategory, IPopularArticles, ITag, TocTypes } from "@types";
 import styles from "@/src/styles/Detail.module.scss";
-import { convertToToc, convertToHtml } from "@/src/scripts";
-import { getAllBlogs, getBlogById, getContents } from "@/src/framework/blog";
-import ImageThumbnail from "@/src/components/ImageThumbnail";
+import { convertToToc, convertToHtml } from "@src/scripts";
+import { getAllBlogs, getBlogById, getContents } from "@src/framework/blog";
+import { ImageThumbnail } from "@components";
 
 type DetailProps = {
   blog: IBlog;

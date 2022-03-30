@@ -1,5 +1,5 @@
 import NextLink from "next/link";
-import { ICategory, ITag } from "@/src/types";
+import { ICategory, ITag } from "@types";
 import styles from "@/src/styles/components/Pager.module.scss";
 
 type PagerProps = {
@@ -10,7 +10,7 @@ type PagerProps = {
 };
 
 export const Pager: React.FC<PagerProps> = (props) => {
-  const getPath = (pageNumber) => {
+  const getPath = (pageNumber: number) => {
     if (props.selectedCategory) {
       return `/category/${props.selectedCategory.id}/page/${pageNumber}`;
     } else if (props.selectedTag) {

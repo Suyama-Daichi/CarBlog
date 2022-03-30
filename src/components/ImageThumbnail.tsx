@@ -5,7 +5,7 @@ type Props = {
   url: string;
   media?: string;
 };
-const ImageThumbnail = ({ url }: Props) => {
+export const ImageThumbnail = ({ url }: Props) => {
   return (
     <Image
       objectFit="cover"
@@ -18,5 +18,3 @@ const ImageThumbnail = ({ url }: Props) => {
     />
   );
 };
-
-export default ImageThumbnail;

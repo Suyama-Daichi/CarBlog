@@ -1,6 +1,6 @@
 import axios from "axios";
 import { config } from "site.config";
-import { IBlog, MicroCmsResponse } from "@/src/types";
+import { IBlog, MicroCmsResponse } from "@types";
 
 const apiRoot: string = `https://${config.serviceId}.microcms.io/api/v1`;
 

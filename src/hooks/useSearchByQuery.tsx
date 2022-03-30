@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useQuery } from "react-query";
-import { MicroCmsResponse, IBlog } from "@/src/types";
-import { getBlogsByQuery } from "@/src/framework/getBlogsByQuery";
+import { MicroCmsResponse, IBlog } from "@types";
+import { getBlogsByQuery } from "@src/framework/getBlogsByQuery";
 
 export function useSearchByQuery(
   query: string,

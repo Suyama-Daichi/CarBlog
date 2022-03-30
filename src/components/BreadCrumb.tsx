@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import { ICategory, ITag } from '@/types';
+import Link from "next/link";
+import { ICategory, ITag } from "@types";
 
 type BreadCrumbProps = {
   category?: ICategory;
@@ -28,7 +28,9 @@ export const BreadCrumb: React.FC<BreadCrumbProps> = (props) => {
       </li>
       {hasCategory(props.category) && (
         <li className="breadcrumbList">
-          <Link href={`/category/${props.category?.id}/page/1`}>{props.category?.name}</Link>
+          <Link href={`/category/${props.category?.id}/page/1`}>
+            {props.category?.name}
+          </Link>
         </li>
       )}
       {hasTag(props.tag) && (

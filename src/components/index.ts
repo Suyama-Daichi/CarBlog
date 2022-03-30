@@ -11,3 +11,4 @@ export * from "./Post";
 export * from "./Search";
 export * from "./Share";
 export * from "./Toc";
+export * from "./ImageThumbnail";

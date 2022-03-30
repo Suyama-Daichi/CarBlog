@@ -1,16 +1,11 @@
 import { GetServerSidePropsContext, NextPage } from "next";
 import Link from "next/link";
-import { BreadCrumb, Categories, Meta, PopularArticle } from "@/src/components";
-import { useSearchByQuery } from "@/src/hooks";
-import {
-  IBlog,
-  ICategory,
-  IPopularArticles,
-  MicroCmsResponse,
-} from "@/src/types";
+import { BreadCrumb, Categories, Meta, PopularArticle } from "@components";
+import { useSearchByQuery } from "@hooks";
+import { IBlog, ICategory, IPopularArticles, MicroCmsResponse } from "@types";
 import styles from "@/src/styles/SearchPage.module.scss";
-import { getCategories, getPopularArticles } from "@/src/framework/blog";
-import { getBlogsByQuery } from "@/src/framework";
+import { getCategories, getPopularArticles } from "@src/framework/blog";
+import { getBlogsByQuery } from "@src/framework";
 
 type IndexProps = {
   blogs: MicroCmsResponse<IBlog>;

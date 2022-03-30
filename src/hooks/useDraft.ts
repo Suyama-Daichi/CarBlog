@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/dist/client/router";
-import { IDraftResponse } from "@/src/types";
-import { getDraftBlog } from "@/src/framework/draft";
+import { IDraftResponse } from "@types";
+import { getDraftBlog } from "@src/framework/draft";
 
 export const useDraft = () => {
   const router = useRouter();

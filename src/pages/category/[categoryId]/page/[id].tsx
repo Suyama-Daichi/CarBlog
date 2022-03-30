@@ -9,9 +9,9 @@ import {
   Pager,
   PopularArticle,
   Search,
-} from "@/src/components";
-import { IBlog, ICategory, IPopularArticles, ITag } from "@/src/types";
-import { getContents } from "@/src/framework/blog";
+} from "@components";
+import { IBlog, ICategory, IPopularArticles, ITag } from "@types";
+import { getContents } from "@src/framework/blog";
 
 type PageProps = {
   currentPage: number;

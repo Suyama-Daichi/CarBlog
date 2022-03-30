@@ -1,6 +1,6 @@
 import NextLink from "next/link";
-import { IAuthor, ICategory, ITag } from "@/src/types";
-import { formatDate } from "@/src/utils";
+import { IAuthor, ICategory, ITag } from "@types";
+import { formatDate } from "@src/utils";
 
 type MetaProps = {
   category?: ICategory;

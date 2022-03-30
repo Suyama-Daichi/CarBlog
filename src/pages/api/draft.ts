@@ -1,8 +1,8 @@
 import axios from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
 import { config } from "site.config";
-import { IBlog } from "@/src/types";
-import { convertToToc, convertToHtml } from "@/src/scripts";
+import { IBlog } from "@types";
+import { convertToToc, convertToHtml } from "@src/scripts";
 
 const draft = async (req: NextApiRequest, res: NextApiResponse) => {
   const id = req.query.id;

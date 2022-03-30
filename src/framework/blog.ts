@@ -6,8 +6,8 @@ import {
   ITag,
   MicroCmsResponse,
   Queries,
-} from "@/src/types";
-import { client } from "@/src/framework";
+} from "@types";
+import { client } from "@src/framework";
 
 const limit = parseInt(config.defaultLimit);
 

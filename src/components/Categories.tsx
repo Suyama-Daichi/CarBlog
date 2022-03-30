@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ICategory } from "@/src/types";
+import { ICategory } from "@types";
 import styles from "@/src/styles/components/Categories.module.scss";
 
 type CategoriesProps = {

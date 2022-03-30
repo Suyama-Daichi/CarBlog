@@ -1,6 +1,6 @@
-import { IBlog } from "@/src/types";
+import { IBlog } from "@types";
 import styles from "@/src/styles/components/PopularArticle.module.scss";
-import ImageThumbnail from "@/src/components/ImageThumbnail";
+import { ImageThumbnail } from "@components";
 
 type PopularArticleProps = {
   blogs: IBlog[];
