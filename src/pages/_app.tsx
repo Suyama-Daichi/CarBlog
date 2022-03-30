@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { Footer, Header } from "@components";
 import { config } from "site.config";
 import { usePageView } from "@hooks";
-import "@/src/styles/globals.scss";
+import "@styles/globals.scss";
 
 const queryClient = new QueryClient();
 

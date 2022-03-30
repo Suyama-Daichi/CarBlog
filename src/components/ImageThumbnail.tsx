@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "@/src/styles/components/PopularArticle.module.scss";
+import styles from "@styles/components/PopularArticle.module.scss";
 
 type Props = {
   url: string;

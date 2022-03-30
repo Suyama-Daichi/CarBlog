@@ -8,6 +8,7 @@ import {
   Queries,
 } from "@types";
 import { client } from "@src/framework";
+import { range } from "@src/utils/util";
 
 const limit = parseInt(config.defaultLimit);
 
@@ -69,7 +70,7 @@ export const getBlogsByFilter = async (
     endpoint: "blog",
     queries: queries,
   });
-  const pager = [...Array(Math.ceil(blogs.totalCount / 10)).keys()];
+  const pager = [...range(0, blogs.totalCount / 10)];
   return { blogs, pager };
 };
 
@@ -96,7 +97,7 @@ export const getPopularArticles = async (): Promise<IPopularArticles> => {
   return res;
 };
 
-export const getTags = async (): Promise<MicroCmsResponse<ITag>> => {
+export const getTags = async () => {
   // console.log('called7');
   // const res = await client.get<MicroCmsResponse<ITag>>({
   //   endpoint: 'tags',

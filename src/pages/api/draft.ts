@@ -20,8 +20,8 @@ const draft = async (req: NextApiRequest, res: NextApiResponse) => {
       }
     )
     .then(({ data }) => {
-      const toc = convertToToc(data.body);
-      const body = convertToHtml(data.body);
+      const toc = convertToToc(data.body || "");
+      const body = convertToHtml(data.body || "");
       res.status(200).json({ blog: data, toc: toc, body: body });
     })
     .catch((error) => {

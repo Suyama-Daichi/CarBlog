@@ -1,9 +1,15 @@
 import { GetServerSidePropsContext, NextPage } from "next";
 import Link from "next/link";
-import { BreadCrumb, Categories, Meta, PopularArticle } from "@components";
+import {
+  BreadCrumb,
+  Categories,
+  ImageThumbnail,
+  Meta,
+  PopularArticle,
+} from "@components";
 import { useSearchByQuery } from "@hooks";
 import { IBlog, ICategory, IPopularArticles, MicroCmsResponse } from "@types";
-import styles from "@/src/styles/SearchPage.module.scss";
+import styles from "@styles/SearchPage.module.scss";
 import { getCategories, getPopularArticles } from "@src/framework/blog";
 import { getBlogsByQuery } from "@src/framework";
 
@@ -29,40 +35,40 @@ const Index: NextPage<IndexProps> = (props) => {
           onKeyPress={(e) => onEnterKeyEvent(e)}
         />
         <BreadCrumb />
-        {data.contents.length === 0 && <>記事がありません</>}
-        <ul>
-          {data.contents.map((blog) => {
-            return (
-              <li key={blog.id} className="list">
-                <Link href="/[blogId]" as={`/${blog.id}`}>
-                  <a className="link">
-                    <>
-                      {blog.ogimage && (
-                        <picture>
-                          <img
-                            src={`${blog.ogimage.url}?w=670`}
-                            className="ogimage lazyload"
-                          />
-                        </picture>
-                      )}
-                      <dl className="content">
-                        <dt className="title">{blog.title}</dt>
-                        <dd>
-                          <Meta
-                            createdAt={blog.createdAt}
-                            author={blog.writer}
-                            category={blog.category}
-                            tags={blog.tag}
-                          />
-                        </dd>
-                      </dl>
-                    </>
-                  </a>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+        {!data || data.contents.length === 0 ? (
+          <>記事がありません</>
+        ) : (
+          <ul>
+            {data.contents.map((blog) => {
+              return (
+                <li key={blog.id} className="list">
+                  <Link href="/[blogId]" as={`/${blog.id}`}>
+                    <a className="link">
+                      <>
+                        {blog.ogimage && (
+                          <picture>
+                            <ImageThumbnail url={`${blog.ogimage.url}?w=670`} />
+                          </picture>
+                        )}
+                        <dl className="content">
+                          <dt className="title">{blog.title}</dt>
+                          <dd>
+                            <Meta
+                              createdAt={blog.createdAt}
+                              author={blog.writer}
+                              category={blog.category}
+                              tags={blog.tag}
+                            />
+                          </dd>
+                        </dl>
+                      </>
+                    </a>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        )}
       </div>
       <aside className="aside">
         <Categories categories={props.categories.contents} />

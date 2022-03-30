@@ -2,6 +2,7 @@ import { NextPage } from "next";
 import {
   BreadCrumb,
   Categories,
+  ImageThumbnail,
   Latest,
   Loader,
   Meta,
@@ -32,34 +33,33 @@ const Draft: NextPage<DraftProps> = (props) => {
   return (
     <div className={styles.divider}>
       <article className={styles.article}>
-        <div className={styles.ogimageWrap}>
-          <picture>
-            <source
-              media="(min-width: 1160px)"
-              type="image/webp"
-              srcSet={`${data.blog.ogimage.url}?w=820&fm=webp, ${data.blog.ogimage.url}?w=1640&fm=webp 2x`}
-            />
-            <source
-              media="(min-width: 820px)"
-              type="image/webp"
-              srcSet={`${data.blog.ogimage.url}?w=740&fm=webp, ${data.blog.ogimage.url}?w=1480&fm=webp 2x`}
-            />
-            <source
-              media="(min-width: 768px)"
-              type="image/webp"
-              srcSet={`${data.blog.ogimage.url}?w=728&fm=webp, ${data.blog.ogimage.url}?w=1456&fm=webp 2x`}
-            />
-            <source
-              media="(min-width: 768px)"
-              type="image/webp"
-              srcSet={`${data.blog.ogimage.url}?w=375&fm=webp, ${data.blog.ogimage.url}?w=750&fm=webp 2x`}
-            />
-            <img
-              src={`${data.blog.ogimage?.url}?w=820&q=100`}
-              className={styles.ogimage}
-            />
-          </picture>
-        </div>
+        {data.blog.ogimage && (
+          <div className={styles.ogimageWrap}>
+            <picture>
+              <source
+                media="(min-width: 1160px)"
+                type="image/webp"
+                srcSet={`${data.blog.ogimage.url}?w=820&fm=webp, ${data.blog.ogimage.url}?w=1640&fm=webp 2x`}
+              />
+              <source
+                media="(min-width: 820px)"
+                type="image/webp"
+                srcSet={`${data.blog.ogimage.url}?w=740&fm=webp, ${data.blog.ogimage.url}?w=1480&fm=webp 2x`}
+              />
+              <source
+                media="(min-width: 768px)"
+                type="image/webp"
+                srcSet={`${data.blog.ogimage.url}?w=728&fm=webp, ${data.blog.ogimage.url}?w=1456&fm=webp 2x`}
+              />
+              <source
+                media="(min-width: 768px)"
+                type="image/webp"
+                srcSet={`${data.blog.ogimage.url}?w=375&fm=webp, ${data.blog.ogimage.url}?w=750&fm=webp 2x`}
+              />
+              <ImageThumbnail url={`${data.blog.ogimage.url}?w=560&q=100`} />
+            </picture>
+          </div>
+        )}
         <BreadCrumb category={data.blog.category} />
         <div className={styles.main}>
           <Share id={data.blog.id} title={data.blog.title} />

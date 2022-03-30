@@ -11,7 +11,7 @@ import {
 import { IBlog, ICategory, IPopularArticles } from "@types";
 import { getContents } from "@src/framework/blog";
 import Image from "next/image";
-import styles from "@/src/styles/components/PopularArticle.module.scss";
+import styles from "@styles/components/PopularArticle.module.scss";
 
 type IndexProps = {
   currentPage: number;

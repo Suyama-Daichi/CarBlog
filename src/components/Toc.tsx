@@ -1,4 +1,4 @@
-import styles from "@/src/styles/components/Toc.module.scss";
+import styles from "@styles/components/Toc.module.scss";
 import { Link } from "react-scroll";
 import { TocTypes } from "@types";
 
