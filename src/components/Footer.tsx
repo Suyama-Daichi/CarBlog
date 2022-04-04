@@ -1,9 +1,10 @@
 import styles from "@styles/components/Footer.module.scss";
+import { config } from "site.config";
 
 export const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
-      <ul className={styles.lists}>
+      {/* <ul className={styles.lists}>
         <li className={styles.list}>
           <a href="">運営会社</a>
         </li>
@@ -19,8 +20,8 @@ export const Footer: React.FC = () => {
         <li className={styles.list}>
           <a href="">お問い合わせ</a>
         </li>
-      </ul>
-      <p className={styles.cr}>© 〇〇 Inc.</p>
+      </ul> */}
+      <p className={styles.cr}>{config.siteMeta.title}</p>
     </footer>
   );
 };
