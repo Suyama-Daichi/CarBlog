@@ -12,6 +12,7 @@ import {
 } from "@components";
 import { IBlog, ICategory, IPopularArticles, ITag } from "@src/types";
 import { getBlogsByFilter, getContents } from "@src/framework";
+import Img from "next/image";
 
 type PageProps = {
   currentPage: number;
@@ -41,8 +42,10 @@ const Page: NextPage<PageProps> = (props) => {
                     <>
                       {blog.ogimage && (
                         <picture>
-                          <img
-                            src={`${blog.ogimage.url}?w=670`}
+                          <Img
+                            width={384}
+                            height={216}
+                            src={`${blog.ogimage.url}?w=384`}
                             className="ogimage lazyload"
                           />
                         </picture>

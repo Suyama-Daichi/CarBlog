@@ -1,6 +1,7 @@
 import NextLink from "next/link";
 import { IAuthor, ICategory, ITag } from "@types";
 import { formatDate } from "@src/utils";
+import Img from "next/image";
 
 type MetaProps = {
   category?: ICategory;
@@ -40,14 +41,24 @@ export const Meta: React.FC<MetaProps> = (props) => {
 
       <div className="meta">
         <span className="timestamp">
-          <img src="/images/icon_clock.svg" alt="clock" />
+          <Img
+            width={20}
+            height={20}
+            src="/images/icon_clock.svg"
+            alt="clock"
+          />
           <time dateTime={formatDate(props.createdAt ?? "", "YYYY-MM-DD")}>
             {formatDate(props.createdAt ?? "", "YYYY/MM/DD")}
           </time>
         </span>
         {props.author && (
           <span className="author">
-            <img src="/images/icon_author.svg" alt="author" />
+            <Img
+              width={20}
+              height={20}
+              src="/images/icon_author.svg"
+              alt="author"
+            />
             {props.author.name}
           </span>
         )}
