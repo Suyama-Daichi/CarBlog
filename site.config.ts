@@ -1,6 +1,6 @@
 export const config = {
   siteMeta: {
-    title: "すーさんのドライブ&サイクル",
+    title: "すーさんの旅行日記",
     description: "車と自転車と…",
   },
   baseUrl:
