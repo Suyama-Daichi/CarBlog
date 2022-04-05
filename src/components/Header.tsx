@@ -3,6 +3,7 @@ import Link from "next/link";
 import styles from "@styles/components/Header.module.scss";
 import Img from "next/image";
 
+const iconSize = { width: 24, height: 24 };
 export const Header: React.FC = () => {
   const [isOpen, setOpen] = useState<boolean>(false);
 
@@ -12,11 +13,12 @@ export const Header: React.FC = () => {
         <h1 className={styles.logo}>
           <Link href="/">
             <Img
+              objectFit="contain"
               width={200}
-              height={28}
+              height={72}
               className={styles.logoImg}
-              src="/images/vercel.svg"
-              alt="microCMS"
+              src="/images/siteLogo.png"
+              alt="siteLogo"
             />
           </Link>
         </h1>
@@ -32,14 +34,23 @@ export const Header: React.FC = () => {
         >
           <ul className={styles.lists}>
             <li className={styles.list}>
-              <a href="">menu1</a>
+              {/* <a href="https://github.com/Suyama-Daichi">GitHub</a> */}
+              <Img
+                onClick={() =>
+                  window.open("https://github.com/Suyama-Daichi", "_blank")
+                }
+                {...iconSize}
+                src="/images/icon_github.svg"
+                alt="twitter"
+              />
             </li>
-            <li className={styles.list}>
+
+            {/* <li className={styles.list}>
               <a href="">menu2</a>
             </li>
             <li className={styles.list}>
               <a href="">menu3</a>
-            </li>
+            </li> */}
           </ul>
         </div>
       </header>
