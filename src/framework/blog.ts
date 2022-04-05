@@ -98,7 +98,6 @@ export const getPopularArticles = async (): Promise<IPopularArticles> => {
 };
 
 export const getTags = async () => {
-  // console.log('called7');
   // const res = await client.get<MicroCmsResponse<ITag>>({
   //   endpoint: 'tags',
   //   queries: { limit: 1000 },

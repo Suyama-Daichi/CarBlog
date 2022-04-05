@@ -15,7 +15,6 @@ export const BreadCrumb: React.FC<BreadCrumbProps> = (props) => {
   };
 
   const hasTag = (tag?: ITag) => {
-    console.log(tag);
     if (!tag) {
       return false;
     }
